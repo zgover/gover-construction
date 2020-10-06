@@ -1,10 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
-import blue from '@material-ui/core/colors/blue';
-import pink from '@material-ui/core/colors/pink';
 import grey from '@material-ui/core/colors/grey';
-import brown from '@material-ui/core/colors/brown';
-import deepOrange from '@material-ui/core/colors/deepOrange';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 // Create a theme instance.
 const theme = createMuiTheme({
@@ -15,14 +12,15 @@ const theme = createMuiTheme({
       main: grey['800'],
     },
     secondary: {
-      main: pink['A100'],
+      main: '#c7aa8b',
     },
     error: {
       main: red.A400,
     },
     background: {
       default: '#fff',
-    },
+      darkest: grey['900'],
+    } as any,
   },
 });
 

@@ -1,8 +1,5 @@
 import React from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import Link from "@material-ui/core/Link";
-import Typography from "@material-ui/core/Typography";
-import LogoIcon from "./LogoIcon";
 import AppBar from "./AppBar";
 
 const useStyles = makeStyles((theme: Theme) =>

@@ -23,7 +23,7 @@ export default function Section(props: Props) {
   switch(variant) {
     case 't':
     case 'tan':
-      bgcolor = '#c7aa8b'
+      bgcolor = 'secondary.main'
       break
     case 'w':
     case 'white':
@@ -33,7 +33,7 @@ export default function Section(props: Props) {
   }
 
   return (
-    <Box py={4} bgcolor={bgcolor} {...rest}>
+    <Box py={16} bgcolor={bgcolor} {...rest}>
       <Container maxWidth="lg" {...cProps}>
         {children as any}
       </Container>

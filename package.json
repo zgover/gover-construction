@@ -2,12 +2,19 @@
   "name": "gover-construction",
   "version": "1.0.0-alpha",
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
     "clsx": "latest",
+    "firebase": "latest",
+    "firebase-admin": "latest",
+    "js-cookie": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-firebaseui": "latest",
+    "swr": "latest"
   },
   "scripts": {
     "dev": "next",

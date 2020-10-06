@@ -6,7 +6,10 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import TelIcon from '@material-ui/icons/Call';
+import EmailIcon from '@material-ui/icons/Mail';
 import LogoIcon from './LogoIcon';
+import { Icon } from '@material-ui/core';
 
 interface Props {
   /**
@@ -35,6 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+      color: theme.palette.common.white
     },
     iconButton: {
       marginRight: theme.spacing(0.5),
@@ -55,13 +59,18 @@ export default function AppBar(props: any) {
       <HideOnScroll>
         <MuiAppBar>
           <Toolbar>
-            <IconButton edge="start" className={classes.iconButton} size="small" color="inherit" aria-label="gover construction">
+            <IconButton edge="start" className={classes.iconButton} href="/" size="small" color="inherit" aria-label="gover construction">
               <LogoIcon className={classes.icon} fontSize="large" />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
               GOVER <span style={{color: '#c7aa8b'}}>CONSTRUCTION</span>
             </Typography>
-            <Typography variant="h6">SSS</Typography>
+            <IconButton href="tel:+15418153618" aria-label="call" title="Call Gover Construction LLC" color="inherit">
+              <Icon component={TelIcon} color="inherit" fontSize="default"/>
+            </IconButton>
+            <IconButton href="mailto:info@gover.construction" aria-label="email" title="Email Gover Construction LLC" color="inherit">
+              <Icon component={EmailIcon} color="inherit" fontSize="default"/>
+            </IconButton>
           </Toolbar>
         </MuiAppBar>
       </HideOnScroll>
