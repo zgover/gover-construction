@@ -1,4 +1,5 @@
 import React from "react";
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography";
 import MediaCard from "../src/MediaCard";
 import Footer from "../src/Footer";
@@ -11,7 +12,19 @@ import LogoIcon from "../src/LogoIcon";
 import projects from "../src/const/projects";
 import Head from "next/head";
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    title: {
+      [theme.breakpoints.down("sm")]: {
+        fontSize: '3rem'
+      }
+    }
+  }),
+);
+
 export default function Index() {
+  const classes = useStyles()
+
   const title = "Hire Us! Central Oregon Residential Contruction – Gover Construction";
   const description = "Central Oregon siding repair, roof replacement, flooring, interior remodeling, new building structures we got you covered from A to Z";
   const url = 'https://gover.construction/'
@@ -39,7 +52,7 @@ export default function Index() {
         maxWidth="lg"
       >
         <Box my={4}>
-          <Typography variant="h1" component="h2" align="center">
+          <Typography variant="h1" component="h2" align="center" className={classes.title}>
             <Box fontWeight="fontWeightLight" letterSpacing={-5}>
               WE BUILD YOUR
             </Box>
