@@ -1,26 +1,26 @@
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Link from '../src/Link';
-import Footer from '../src/Footer';
-import Section from '../src/Section';
-import useSWR from 'swr';
-import { useUser } from '../src/lib/auth/useUser';
+import React from "react";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+import Link from "../src/Link";
+import Footer from "../src/Footer";
+import Section from "../src/Section";
+import useSWR from "swr";
+import { useUser } from "../src/lib/auth/useUser";
 
-const fetcher = (url, token) =>
+const fetcher = (url: any, token: any) =>
   fetch(url, {
-    method: 'GET',
-    headers: new Headers({ 'Content-Type': 'application/json', token }),
-    credentials: 'same-origin',
-  }).then((res) => res.json())
+    method: "GET",
+    headers: new Headers({ "Content-Type": "application/json", token }),
+    credentials: "same-origin",
+  }).then((res) => res.json());
 
 export default function About() {
-  const { user, logout } = useUser()
+  const { user, logout }: any = useUser();
   const { data, error } = useSWR(
-    user ? ['/api/getFood', (user as any).token] : null,
+    user ? ["/api/getFood", (user as any).token] : null,
     fetcher
-  )
+  );
   if (!user) {
     // return (
     //   <>
@@ -34,7 +34,6 @@ export default function About() {
     //   </>
     // )
   }
-
 
   return (
     <React.Fragment>
@@ -53,10 +52,10 @@ export default function About() {
             <p>You're signed in. Email: {user?.email}</p>
             <p
               style={{
-                display: 'inline-block',
-                color: 'blue',
-                textDecoration: 'underline',
-                cursor: 'pointer',
+                display: "inline-block",
+                color: "blue",
+                textDecoration: "underline",
+                cursor: "pointer",
               }}
               onClick={() => logout()}
             >
@@ -64,9 +63,7 @@ export default function About() {
             </p>
           </div>
           <div>
-            <Link href={'/example'}>
-              Another example page
-            </Link>
+            <Link href={"/example"}>Another example page</Link>
           </div>
           {error && <div>Failed to fetch food!</div>}
           {data && !error ? (
@@ -75,7 +72,6 @@ export default function About() {
             <div>Loading...</div>
           )}
         </div>
-
       </Section>
       <Section>
         <Typography variant="h4" component="h1" gutterBottom>

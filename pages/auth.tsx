@@ -1,4 +1,4 @@
-import FirebaseAuth from '../src/FirebaseAuth'
+import FirebaseAuth from "../src/FirebaseAuth";
 
 const Auth = () => {
   return (
@@ -8,7 +8,7 @@ const Auth = () => {
         <FirebaseAuth />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Auth
+export default Auth;
