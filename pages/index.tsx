@@ -71,7 +71,7 @@ export default function Index() {
         <Grid
           container
           direction="row-reverse"
-          spacing={3}
+          spacing={2}
           alignItems="center"
           justify="center"
         >
@@ -99,7 +99,7 @@ export default function Index() {
         <br />
         <br />
         <br />
-        <Grid container spacing={10} alignItems="center" justify="center">
+        <Grid container spacing={2} alignItems="center" justify="center">
           {projects.map((item, key) => (
             <Grid item xs={12} sm={6} key={key}>
               <MediaCard
